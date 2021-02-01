@@ -29,7 +29,7 @@ function set_ItemAttributes(element, attributes) {
 /* Create Element for Photos and Links and Add to DOM */
 function displayPhotos() {
     imagesLoaded = 0;
-    totalImages += photos_array.length;
+    totalImages = photos_array.length;
     /* Iterating over photos array to get each image */
     photos_array.forEach((photo) => {
         /* Create <a> link to Unsplash */
@@ -46,7 +46,7 @@ function displayPhotos() {
             title: photo.alt_description,
         });
 
-        /* Event listener */
+        /* Check if all images are loaded */
         image.addEventListener('load', imageLoaded);
 
         photo_item.appendChild(image);
@@ -73,8 +73,6 @@ window.addEventListener("scroll", (evt) => {
         getPhotos();
     }
 });
-
-
 
 
 /* On load */
